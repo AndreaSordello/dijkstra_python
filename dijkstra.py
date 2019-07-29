@@ -1,7 +1,6 @@
 import math
 class MyGraph():
     
-
     def __init__(self):
         self.grafo={}
         print("Creato nuovo grafo")
@@ -15,7 +14,7 @@ class MyGraph():
     def collega(self,base,nodo,costo):
         if   base in self.grafo and  nodo in self.grafo :
             self.grafo[base][nodo]=costo
-            self.grafo[nodo][base]=costo
+            #self.grafo[nodo][base]=costo
             return True
         else:
             print("Nodo inserito non presente nel grafo")
@@ -81,9 +80,9 @@ grafo.aggiungiNodo("E")
 grafo.aggiungiNodo("F")
 grafo.collega("A","B",9)
 grafo.collega("A","C",8)
-grafo.collega("D","C",4)
+grafo.collega("C","D",4)
 grafo.collega("B","D",5)
 grafo.collega("E","F",3)
-grafo.collega("F","C",8)
+grafo.collega("C","E",8)
 grafo.stampaGrafo()
 print("PERCORSO MINIMO ",grafo.dijkstra("A","F"))
